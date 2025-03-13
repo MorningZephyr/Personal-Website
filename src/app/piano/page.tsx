@@ -19,7 +19,7 @@ export default function Piano() {
       {/* Song Selection */}
       <div>
         <button onClick={() => setCurrentSong("/canon_in_c.m4a")}>Canon in C</button>
-        <button onClick={() => setCurrentSong("/song2.m4a")}>Play Song 2</button>
+        <button onClick={() => setCurrentSong("/bll_fairies.m4a")}>Magical Fairies</button>
       </div>
     </div>
   );
