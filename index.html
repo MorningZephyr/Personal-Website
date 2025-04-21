@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- head
+        Purpose: Link to the favicon (small image that appears in the browser tab)
+        -->
+        <title>Zhen's Personal Website</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+
+        <!-- headings
+
+        Purpose:
+        - Contains the title, subtitle, image, and key buttons for the webpage
+        -->
+        <header id="main-header">
+
+            <nav class="navbar">
+
+                <ul>
+                    <li><a href="#about-this-website">Main Page</a></li>
+                    <li><a href="#project-section">Project Section</a></li>
+                    <li><a href="#music-section">Music Section</a></li>
+                    <li style="margin-left:auto; margin-right: 0;"><button id="theme-button">Toggle Dark Mode</button></li>
+                </ul>
+                
+            </nav>
+
+            <h1>Welcome to Zhen's Personal Website!</h1>
+        </header>
+        <!-- about
+
+        Purpose:
+        - Section for general info about the event
+        - Contains a video, description, and key points about the event
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+
+        <section style="display: flex;  align-items: center; flex-wrap: wrap; gap: 50px;" id="about-this-website">
+            <div>            
+                <header>
+                    <h2>About this Website</h2>
+                    <p>Here, I'll be showcasing my projects and perhaps piano recording. Users will be able to see some of my featured projects, and can visit the project link when needed. Also, they can listen to some of the piano pieces that I recorded (audio)</p>
+                    <p>In addition, job recruiters can visit this page, so this website also acts as my personal portfolio</p>
+                </header>
+                <h3>Goals of this website</h3>
+                <div class="goal-list">
+                    <ul class="goal-list">
+                        <li> <b>Bullet 1:</b> <i>Projects</i></li>
+                        <li> <b>Bullet 2:</b> <i>Piano recordings</i></li>
+                        <li> <b>Bullet 3:</b> <i>About Me section</i></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <img style="width: 300px;" src="img/yveltal.jpg" alt="A picture of the pokemon yveltal">
+            </div>
+
+
+        </section>
+
+        <section id="project-section">
+
+            <h2>List of Projects</h2>
+            <div id="project-cards">   
+
+                <div class="project-card">
+                    <img alt="Picture of stock prices" src="./img/stock_price.jpg"/>
+                    <h3>Stock Price Collector</h3>
+                    <a href="https://github.com/MorningZephyr/Stock-Price-Collector">Link to Project</a>
+                    <p>This project allows you to fetch and download stock price data of a given stock. You can save in .csv or .xslx form. Range and interval of prices are also customizable, allowing flexibility</p>
+                </div>
+
+                <div class="project-card">
+                    <img alt="Picture of an automater" src="./img/automation.jpg"/>
+                    <h3>Game Automation</h3>
+                    <p>Description of event activity.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+
+
+            
+        <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
+
+        <section id="music-section">
+
+            <h2 style="margin-bottom: 20px;">Music section</h2>
+            <audio style="margin-bottom:20px ;" id="audioPlayer" controls></audio>
+            <p>Click on a music!</p>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="playMusic('canon_in_c.m4a')">Canon in C</button>
+                <button onclick="playMusic('fairies.mp3')">Magical Fairies</button>
+                <button onclick="playMusic('christmas_snow.mp3')">Christmas Snow</button>
+            </div>
+
+
+            <div id="rsvp">
+
+                <h2>Song Requests (RSVP)</h2>
+
+                <div class="rsvp-container">
+                    <div class="rsvp-para">
+                        <!-- info goes here -->
+                         <p>Got songs for me to make piano covers of? Submit your request!</p>
+                    </div>
+                    <div class="rsvp-participants">
+                        <p>🎹 Pachelbel has requested "Canon in C"</p>
+                        <p>🎹 MeiXue has requested "Magical Fairies"</p>
+                        <p>🎹 Rainy has requested "Christmas Snow"</p>
+                    </div>
+                </div>
+            
+                <!--- Sign RSVP Form --->
+                <div class="form-container">
+                    <form id="rsvp-form" title="rsvp-form">
+                        <!-- form inputs go here -->
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+
+                        <label for="song-request">Song Request:</label>
+                        <input type="text" id="song-request" name="song-request">
+
+                    </form>
+                    <!-- Submit button -->
+                    <button style="margin-top: 10px;" id="rsvp-button">Submit RSVP</button>
+                </div>      
+
+            </div>
+            
+            
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- links
+
+        Purpose:
+        - Links to other resources related to the event
+
+        When To Modify:
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <h2>Links</h2>
+
+        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
+        <a class="block" href="https://www.codepath.org">
+            <article>
+                <h3>Link title</h3>
+                <p>Link description</p>
+            </article>
+        </a>
+
+        <script src="index.js"></script>
+    </body>
+</html>
