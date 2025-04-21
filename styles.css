@@ -1,0 +1,151 @@
+
+
+#theme-button {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin-right: 20px;
+    
+
+
+}
+/* Default dark mode style */
+.dark-mode {
+    background: #0d1117;
+    color: #c9d1d9;
+}
+/* Example: Different dark mode style for h1 */
+.dark-mode h1 {
+    color: #ffffff;
+}
+
+.dark-mode .project-card {
+    border-color: #c9d1d9;
+}
+
+.dark-mode .navbar {
+    border-color: #c9d1d9 ;
+}
+
+/* Example: Different dark mode style for visited links */
+.dark-mode a {
+    color: #fdfcfb;
+}
+
+.dark-mode #theme-button {
+    background-color: #ffffff;
+    color: #0d1117;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    color: #3e3e3e;
+    overflow-x: hidden;
+}
+p {
+    max-width: 700px;
+}
+
+h1 {
+    color: #5a4e4d;
+}
+h3 {
+    color:brown;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+#project-section {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#project-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    padding: 20px;
+    width: 400px;
+}
+
+
+#music-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+button {
+    width: 100px;
+    height: 60px;
+    background-color: white;
+}
+button:hover {
+    background-color: black;
+    color: white;
+    /* Make the button look different when the user hovers over it */
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: brown;
+}
+
+#main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.navbar {
+    border: #0d1117 solid;
+    border-width: thin;
+    
+}
+
+.navbar ul {
+    z-index: 1000; /* Ensures the navbar is on top of other elements */
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 5px;
+    padding-left: 20px;
+    margin: 0;
+    
+}
+
+.navbar ul li {
+    margin-right: 16px;
+}
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    
+}
+
+.navbar ul li a:hover {
+    background-color: grey;
+}

@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- head
-        Purpose: Link to the favicon (small image that appears in the browser tab)
-        -->
+
         <title>Zhen's Personal Website</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     
     <body>
 
-        <!-- headings
-
-        Purpose:
-        - Contains the title, subtitle, image, and key buttons for the webpage
-        -->
         <header id="main-header">
 
             <nav class="navbar">
@@ -30,26 +23,9 @@
 
             <h1>Welcome to Zhen's Personal Website!</h1>
         </header>
-        <!-- about
-
-        Purpose:
-        - Section for general info about the event
-        - Contains a video, description, and key points about the event
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
 
         <section style="display: flex;  align-items: center; flex-wrap: wrap; gap: 50px;" id="about-this-website">
             <div>            
-                <header>
-                    <h2>About this Website</h2>
-                    <p>Here, I'll be showcasing my projects and perhaps piano recording. Users will be able to see some of my featured projects, and can visit the project link when needed. Also, they can listen to some of the piano pieces that I recorded (audio)</p>
-                    <p>In addition, job recruiters can visit this page, so this website also acts as my personal portfolio</p>
-                </header>
                 <h3>Goals of this website</h3>
                 <div class="goal-list">
                     <ul class="goal-list">
@@ -105,42 +81,6 @@
                 <button onclick="playMusic('christmas_snow.mp3')">Christmas Snow</button>
             </div>
 
-
-            <div id="rsvp">
-
-                <h2>Song Requests (RSVP)</h2>
-
-                <div class="rsvp-container">
-                    <div class="rsvp-para">
-                        <!-- info goes here -->
-                         <p>Got songs for me to make piano covers of? Submit your request!</p>
-                    </div>
-                    <div class="rsvp-participants">
-                        <p>🎹 Pachelbel has requested "Canon in C"</p>
-                        <p>🎹 MeiXue has requested "Magical Fairies"</p>
-                        <p>🎹 Rainy has requested "Christmas Snow"</p>
-                    </div>
-                </div>
-            
-                <!--- Sign RSVP Form --->
-                <div class="form-container">
-                    <form id="rsvp-form" title="rsvp-form">
-                        <!-- form inputs go here -->
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email">
-
-                        <label for="song-request">Song Request:</label>
-                        <input type="text" id="song-request" name="song-request">
-
-                    </form>
-                    <!-- Submit button -->
-                    <button style="margin-top: 10px;" id="rsvp-button">Submit RSVP</button>
-                </div>      
-
-            </div>
             
             
         </section>
@@ -148,34 +88,6 @@
 
 
 
-
-
-
-
-
-
-
-
-        <!-- links
-
-        Purpose:
-        - Links to other resources related to the event
-
-        When To Modify:
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        <h2>Links</h2>
-
-        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
-        <a class="block" href="https://www.codepath.org">
-            <article>
-                <h3>Link title</h3>
-                <p>Link description</p>
-            </article>
-        </a>
-
-        <script src="index.js"></script>
+        <script src="scripts.js"></script>
     </body>
 </html>
