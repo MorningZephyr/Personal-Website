@@ -2,7 +2,7 @@ function playMusic(trackName) {
     const audio = document.getElementById("audioPlayer");
 
     // Change the source to desired music and play it
-    audio.src = `./music/${trackName}`;     
+    audio.src = `./Music/${trackName}`;     
     audio.play()
 }
 
