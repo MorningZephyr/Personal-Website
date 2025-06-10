@@ -14,7 +14,7 @@
 
                 <ul>
                     <li><a href="#about-this-website">Main Page</a></li>
-                    <li><a href="#project-section">Project Section</a></li>
+                    <li><a href="#project-section">Featured Projects</a></li>
                     <li><a href="#music-section">Music Section</a></li>
                     <li style="margin-left:auto; margin-right: 0;"><button id="theme-button">Toggle Dark Mode</button></li>
                 </ul>
@@ -45,20 +45,29 @@
 
         <section id="project-section">
 
-            <h2>List of Projects</h2>
+            <h2>Featured Projects</h2>
             <div id="project-cards">   
 
                 <div class="project-card">
                     <img alt="Picture of stock prices" src="./img/stock_price.jpg"/>
                     <h3>Stock Price Collector</h3>
                     <a href="https://github.com/MorningZephyr/Stock-Price-Collector">Link to Project</a>
-                    <p>This project allows you to fetch and download stock price data of a given stock. You can save in .csv or .xslx form. Range and interval of prices are also customizable, allowing flexibility</p>
+                    <p style="text-align: center;"
+                    >   A responsive full stack web app built using Next.js App Router, Flask REST API, 
+                        and Tailwind CSS to fetch and download stock price data of a given stock. Range 
+                        and interval of price data are customizable, allowing flexibility and control
+                    </p>
                 </div>
 
                 <div class="project-card">
                     <img alt="Picture of an automater" src="./img/automation.jpg"/>
                     <h3>Game Automation</h3>
-                    <p>Description of event activity.</p>
+                    <a href="https://github.com/MorningZephyr/Farm-Bot">Link to Project</a>
+                    <p style="text-align: center;"
+                    >   A script for a web-based game for automating mob clearance with minimal manual intervention,
+                        utilizing PyAutoGUI and its image recognition techniques.
+                        Designed multi-tab functionality to run two game accounts simultaneously, doubling game currency acquisition
+                    </p>
                 </div>
 
             </div>
@@ -76,9 +85,24 @@
             <audio style="margin-bottom:20px ;" id="audioPlayer" controls></audio>
             <p>Click on a music!</p>
             <div style="display: flex; gap: 10px;">
-                <button onclick="playMusic('canon_in_c.m4a')">Canon in C</button>
-                <button onclick="playMusic('fairies.mp3')">Magical Fairies</button>
-                <button onclick="playMusic('christmas_snow.mp3')">Christmas Snow</button>
+                
+                <button 
+                    class="music-button"
+                    onclick="playMusic('canon_in_c.m4a')"
+                    >Canon in C
+                </button>
+
+                <button 
+                    class="music-button"
+                    onclick="playMusic('fairies.mp3')"
+                    >Magical Fairies
+                </button>
+
+                <button 
+                class="music-button"
+                    onclick="playMusic('christmas_snow.mp3')"
+                    >Christmas Snow
+                </button>
             </div>
 
             
