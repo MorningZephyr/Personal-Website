@@ -8,12 +8,12 @@
 
 
 }
-/* Default dark mode style */
+
 .dark-mode {
     background: #0d1117;
     color: #c9d1d9;
 }
-/* Example: Different dark mode style for h1 */
+
 .dark-mode h1 {
     color: #ffffff;
 }
@@ -26,7 +26,6 @@
     border-color: #c9d1d9 ;
 }
 
-/* Example: Different dark mode style for visited links */
 .dark-mode a {
     color: #fdfcfb;
 }
@@ -63,8 +62,6 @@ h1 {
 h3 {
     color:brown;
 }
-
-/* Image styles removed - ready for redesign */
 
 #project-section {
     padding-top: 100px;
@@ -105,7 +102,7 @@ button {
 button:hover {
     background-color: black;
     color: white;
-    /* Make the button look different when the user hovers over it */
+
 }
 
 a {
@@ -128,7 +125,7 @@ a:hover {
 }
 
 .navbar ul {
-    z-index: 1000; /* Ensures the navbar is on top of other elements */
+    z-index: 1000; 
     list-style-type: none;
     overflow: hidden;
     display: flex;
@@ -155,7 +152,6 @@ a:hover {
     background-color: grey;
 }
 
-/* RSVP styles removed */
 
 .music-button {
     padding: 12px 24px;
@@ -174,4 +170,3 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 color: purple;
 }
 
-/* Modal styles removed */
