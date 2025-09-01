@@ -1,13 +1,6 @@
 
 
-#theme-button {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    margin-right: 20px;
-    
-
-
-}
+/* Theme button styles removed */
 
 .dark-mode {
     background: #0d1117;
@@ -30,10 +23,7 @@
     color: #fdfcfb;
 }
 
-.dark-mode #theme-button {
-    background-color: #ffffff;
-    color: #0d1117;
-}
+/* Dark mode theme button styles removed */
 
 html {
     padding: 0;

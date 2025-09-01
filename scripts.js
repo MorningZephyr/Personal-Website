@@ -7,12 +7,6 @@ function playMusic(trackName) {
   audio.play()
 }
 
-let themeButton = document.getElementById("theme-button")
-// Step 2: Write the callback function
-const toggleDarkMode = () => {
-  document.body.classList.toggle("dark-mode");
-}
-
-themeButton.addEventListener("click", toggleDarkMode)
+// Dark mode toggle removed - website stays in dark mode
 
 
