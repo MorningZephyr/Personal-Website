@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <!-- head
+        Purpose: Link to the favicon (small image that appears in the browser tab)
+        -->
         <title>Zhen's Personal Website</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     
-    <body>
+    <body class="dark-mode">
 
+        <!-- headings
+
+        Purpose:
+        - Contains the title, subtitle, image, and key buttons for the webpage
+        -->
         <header id="main-header">
 
             <nav class="navbar">
@@ -16,28 +23,32 @@
                     <li><a href="#about-this-website">Main Page</a></li>
                     <li><a href="#project-section">Featured Projects</a></li>
                     <li><a href="#music-section">Music Section</a></li>
-                    <li style="margin-left:auto; margin-right: 0;"><button id="theme-button">Toggle Dark Mode</button></li>
+                    <li style="margin-left:auto; margin-right: 0;"><button id="theme-button">Toggle Light Mode</button></li>
                 </ul>
                 
             </nav>
 
-            <h1>Welcome to Zhen's Personal Website!</h1>
+            <h1 style="margin-bottom: 50px;">Welcome to Zhen's Personal Website!</h1>
         </header>
 
         <section style="display: flex;  align-items: center; flex-wrap: wrap; gap: 50px;" id="about-this-website">
             <div>            
+                <header>
+                    <h2>About this Website</h2>
+                    <p>Here, I'll be showcasing my projects and perhaps piano recording. Users will be able to see some of my featured projects, and can visit the project link when needed. Also, they can listen to some of the piano pieces that I recorded (audio)</p>
+                    <p>In addition, job recruiters can visit this page, so this website also acts as my personal portfolio. Follow along in my journey, and welcome to my world!</p>
+                </header>
                 <h3>Goals of this website</h3>
                 <div class="goal-list">
                     <ul class="goal-list">
                         <li> <b>Bullet 1:</b> <i>Projects</i></li>
                         <li> <b>Bullet 2:</b> <i>Piano recordings</i></li>
-                        <li> <b>Bullet 3:</b> <i>About Me section</i></li>
                     </ul>
                 </div>
             </div>
 
             <div>
-                <img style="width: 300px;" src="img/yveltal.jpg" alt="A picture of the pokemon yveltal">
+                <img style="width: 300px; border-radius: 50%;" src="img/personal_photo.jpg" alt="A picture of me!">
             </div>
 
 
@@ -45,7 +56,7 @@
 
         <section id="project-section">
 
-            <h2>Featured Projects</h2>
+            <h2 style="text-align: center;">Featured Projects</h2>
             <div id="project-cards">   
 
                 <div class="project-card">
@@ -79,37 +90,74 @@
             
         <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
 
-        <section id="music-section">
+        <section id="music-section" style="display: flex; align-items: center; padding: 20px; border: 4px solid; margin: 30px; border-radius: 16px;border-image-source: linear-gradient(135deg, #ff9cf3, #86e1f9, #a18cd1);  border-image-slice: 1; ">
 
-            <h2 style="margin-bottom: 20px;">Music section</h2>
+            <h2 style="margin-bottom: 20px; text-align: center;background: linear-gradient(270deg, #ff9cf3, #86e1f9, #a18cd1);
+            background-size: 600% 600%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s ease infinite;">Music Box</h2>
+            <p style="text-align: center;">Here are some piano recordings that I've covered. Enjoy!</p>
             <audio style="margin-bottom:20px ;" id="audioPlayer" controls></audio>
             <p>Click on a music!</p>
-            <div style="display: flex; gap: 10px;">
-                
-                <button 
-                    class="music-button"
-                    onclick="playMusic('canon_in_c.m4a')"
-                    >Canon in C
-                </button>
-
-                <button 
-                    class="music-button"
-                    onclick="playMusic('fairies.mp3')"
-                    >Magical Fairies
-                </button>
-
-                <button 
-                class="music-button"
-                    onclick="playMusic('christmas_snow.mp3')"
-                    >Christmas Snow
-                </button>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="music-button" onclick="playMusic('canon_in_c.m4a')">Canon in C</button>
+                <button class="music-button" onclick="playMusic('fairies.mp3')">Magical Fairies</button>
+                <button class="music-button" onclick="playMusic('christmas_snow.mp3')">Christmas Snow</button>
             </div>
 
+
+            <div style="margin-top: 100px;" id="rsvp">
+
+                <h2 style="text-align: center;">Song Requests (RSVP)</h2>
+
+                <div class="rsvp-container">
+                    <div class="rsvp-para">
+                        <!-- info goes here -->
+                         <p>Got songs for me to make piano covers of? Submit your request!</p>
+                    </div>
+                    <div class="rsvp-participants">
+                        <p>🎹 Pachelbel has requested "Canon in C"</p>
+                        <p>🎹 MeiXue has requested "Magical Fairies"</p>
+                        <p>🎹 Rainy has requested "Christmas Snow"</p>
+                    </div>
+                </div>
+            
+                <!--- Sign RSVP Form --->
+                <div class="form-container"  style="display: flex; flex-direction: column; align-items: center;">
+                    <form id="rsvp-form" title="rsvp-form">
+                        <!-- form inputs go here -->
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+
+                        <label for="song-request">Song Request:</label>
+                        <input type="text" id="song-request" name="song-request">
+
+                    </form>
+                    <!-- Submit button -->
+                    <button style="margin-top: 10px;" id="rsvp-button">Submit RSVP</button>
+                </div>      
+
+            </div>
             
             
         </section>
 
-
+        <div id="success-modal" class="modal">
+            <div class="modal-container">
+                <div id="modal-item">
+                    <p id="modal-text"></p>
+                </div>
+                <div id="modal-item">
+                    <img id="model-img" src="/img/music-note-bg.png" alt="Image of a music note">
+                </div>
+            </div>
+        </div>
 
 
         <script src="scripts.js"></script>
