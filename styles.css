@@ -359,7 +359,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 156, 243, 0.05), rgba(134, 225, 249, 0.05), rgba(161, 140, 209, 0.05));
+    background: linear-gradient(135deg, rgba(255, 156, 243, 0.02), rgba(134, 225, 249, 0.02), rgba(161, 140, 209, 0.02));
     pointer-events: none;
 }
 
