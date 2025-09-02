@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Zhen's Personal Website</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     
     <body class="dark-mode">
@@ -23,32 +27,31 @@
             <h1 style="margin-bottom: 50px;">Welcome to Zhen's Personal Website!</h1>
         </header>
 
-        <section style="display: flex;  align-items: center; flex-wrap: wrap; gap: 50px;" id="about-this-website">
-            <div>            
-                <header>
-                    <h2>About this Website</h2>
-                    <p>Here, I'll be showcasing my projects and perhaps piano recording. Users will be able to see some of my featured projects, and can visit the project link when needed. Also, they can listen to some of the piano pieces that I recorded (audio)</p>
-                    <p>In addition, job recruiters can visit this page, so this website also acts as my personal portfolio. Follow along in my journey, and welcome to my world!</p>
-                </header>
-                <h3>Goals of this website</h3>
-                <div class="goal-list">
-                    <ul class="goal-list">
-                        <li> <b>Bullet 1:</b> <i>Projects</i></li>
-                        <li> <b>Bullet 2:</b> <i>Piano recordings</i></li>
-                    </ul>
+        <section id="about-this-website">
+            <div class="about-content">            
+                <h2>About This Website</h2>
+                <p>Welcome to my digital space! Here, I showcase my journey as a developer and musician. This website serves as both a creative portfolio and a personal project hub where you can explore my work and listen to my piano recordings.</p>
+                <p>Whether you're a potential employer, fellow developer, or music enthusiast, I invite you to explore my projects and enjoy the musical pieces I've created. This is my world - welcome!</p>
+                
+                <h3>What You'll Find Here</h3>
+                <ul>
+                    <li><strong>Featured Projects:</strong> Full-stack web applications and automation tools</li>
+                    <li><strong>Music Collection:</strong> Piano covers and original compositions</li>
+                    <li><strong>Technical Skills:</strong> Modern web technologies and creative solutions</li>
+                </ul>
+            </div>
+
+            <div class="about-image">
+                <!-- Personal photo placeholder - ready for redesign -->
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600;">
+                    Photo Coming Soon
                 </div>
             </div>
-
-            <div>
-                <!-- Personal photo placeholder - ready for redesign -->
-            </div>
-
-
         </section>
 
         <section id="project-section">
 
-            <h2 style="text-align: center;">Featured Projects</h2>
+            <h2>Featured Projects</h2>
             <div id="project-cards">   
 
                 <div class="project-card">
@@ -76,24 +79,15 @@
             </div>
         </section>
 
-        <section id="music-section" style="display: flex; align-items: center; padding: 20px; border: 4px solid; margin: 30px; border-radius: 16px;border-image-source: linear-gradient(135deg, #ff9cf3, #86e1f9, #a18cd1);  border-image-slice: 1; ">
-
-            <h2 style="margin-bottom: 20px; text-align: center;background: linear-gradient(270deg, #ff9cf3, #86e1f9, #a18cd1);
-            background-size: 600% 600%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 5s ease infinite;">Music Box</h2>
-            <p style="text-align: center;">Here are some piano recordings that I've covered. Enjoy!</p>
-            <audio style="margin-bottom:20px ;" id="audioPlayer" controls></audio>
+        <section id="music-section">
+            <h2>Music Box</h2>
+            <p>Here are some piano recordings that I've covered. Enjoy!</p>
+            <audio id="audioPlayer" controls></audio>
             <p>Click on a music!</p>
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <button class="music-button" onclick="playMusic('canon_in_c.m4a')">Canon in C</button>
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center;">
                 <button class="music-button" onclick="playMusic('fairies.mp3')">Magical Fairies</button>
                 <button class="music-button" onclick="playMusic('christmas_snow.mp3')">Christmas Snow</button>
             </div>
-            
         </section>
 
         <script src="scripts.js"></script>
