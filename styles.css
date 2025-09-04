@@ -77,6 +77,16 @@ body {
     animation: float 6s ease-in-out infinite;
 }
 
+.profile-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+    animation: float 6s ease-in-out infinite;
+    border: 4px solid var(--primary-color);
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -463,6 +473,11 @@ li {
         width: 250px;
         height: 250px;
         font-size: 1.1rem;
+    }
+    
+    .profile-photo {
+        width: 250px;
+        height: 250px;
     }
     
     .hero-buttons {
