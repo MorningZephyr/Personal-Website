@@ -41,6 +41,7 @@ body {
 .hero-content {
     flex: 1;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
@@ -54,6 +55,9 @@ body {
 
 .hero-text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 600px;
 }
 
@@ -203,7 +207,7 @@ p {
 
 /* Hero Section */
 #hero {
-    min-height: 100vh;
+    height: 100vh;
     background: var(--bg-primary);
     display: flex;
     flex-direction: column;
@@ -250,53 +254,6 @@ p {
     100% { background-position: 800px 400px; }
 }
 
-/* Navigation */
-.navbar {
-    background: rgba(10, 10, 10, 0.6);
-    padding: 0.75rem 0;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-}
-
-.navbar ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0.5rem 2rem;
-    margin: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
-}
-
-.navbar ul li a {
-    display: block;
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-md);
-    transition: all 0.3s ease;
-    position: relative;
-    background: rgba(255, 255, 255, 0.12); /* increase chip contrast */
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-}
-
-.navbar ul li a:hover {
-    background: var(--bg-tertiary);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-    border-color: var(--primary-color);
-}
 
 /* Sections */
 section {
@@ -306,17 +263,6 @@ section {
     margin-bottom: 2rem;
 }
 
-/* About Section */
-#about {
-    background: var(--bg-secondary);
-    padding: 4rem 2rem;
-    margin: 2rem auto;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
-    max-width: 1000px;
-    text-align: center;
-}
 
 /* Project Section */
 #project-section {
@@ -327,17 +273,18 @@ section {
 
 #project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
     width: 100%;
+    max-width: 1000px;
 }
 
 .project-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-xl);
-    padding: 2rem;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
     display: flex;
@@ -346,6 +293,8 @@ section {
     text-align: center;
     position: relative;
     overflow: hidden;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .project-card::before {
@@ -377,20 +326,22 @@ section {
 
 .project-card h3 {
     color: var(--text-primary);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .project-card a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border: 2px solid var(--primary-color);
     border-radius: var(--radius-md);
     transition: all 0.3s ease;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
     display: inline-block;
+    font-size: 0.9rem;
 }
 
 .project-card a:hover {
@@ -572,21 +523,15 @@ li {
         font-size: 2rem;
     }
     
-    .navbar ul {
-        padding: 1rem;
-        gap: 1rem;
-    }
     
     section {
         padding: 0 1rem;
     }
     
-    #about {
-        padding: 2rem 1rem;
-    }
     
     #project-cards {
         grid-template-columns: 1fr;
+        max-width: 400px;
     }
     
     .music-button {
