@@ -37,50 +37,79 @@
             <h2>Featured Projects</h2>
             <div id="project-cards">   
 
-                <div class="project-card">
-                    <!-- Project image placeholder - ready for redesign -->
+                <div class="project-card" onclick="openModal('codewatch')">
                     <h3>CodeWatch</h3>
-                    <a href="https://devpost.com/software/codewatch">Link to Project</a>
-                    <p style="text-align: center;"
-                    >   AI/ML Track Winner at HunterHacks! Developed an AI code detection service inspired by AAAI 2025 research,
+                    <p class="project-preview">AI/ML Track Winner at HunterHacks!</p>
+                </div>
+
+                <div class="project-card" onclick="openModal('animei')">
+                    <h3>AniMei</h3>
+                    <p class="project-preview">AI Discord bot for text-to-image generation</p>
+                </div>
+
+                <div class="project-card" onclick="openModal('stock-collector')">
+                    <h3>Stock Price Collector</h3>
+                    <p class="project-preview">Full stack web app for stock data</p>
+                </div>
+
+                <div class="project-card" onclick="openModal('farm-bot')">
+                    <h3>Game Automation</h3>
+                    <p class="project-preview">Web-based game automation script</p>
+                </div>
+
+            </div>
+
+            <!-- Project Modals -->
+            <div id="codewatch-modal" class="project-modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('codewatch')">&times;</button>
+                    <h2 class="modal-title">CodeWatch</h2>
+                    <p class="modal-description">
+                        AI/ML Track Winner at HunterHacks! Developed an AI code detection service inspired by AAAI 2025 research,
                         achieving 85% accuracy through custom problem-extraction techniques. Built a dual-model pipeline with 
                         CodeT5+ and GPT-4o-mini, enabling sub-60s detection latency with scalable inference.
                     </p>
+                    <a href="https://devpost.com/software/codewatch" class="modal-link" target="_blank">View Project</a>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <!-- Project image placeholder - ready for redesign -->
-                    <h3>AniMei</h3>
-                    <a href="https://github.com/MorningZephyr/AniMei">Link to Project</a>
-                    <p style="text-align: center;"
-                    >   AI Discord bot for text-to-image generation using Stable Diffusion models, achieving sub-10s response time
+            <div id="animei-modal" class="project-modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('animei')">&times;</button>
+                    <h2 class="modal-title">AniMei</h2>
+                    <p class="modal-description">
+                        AI Discord bot for text-to-image generation using Stable Diffusion models, achieving sub-10s response time
                         through optimized GPU memory management. Built scalable async processing pipeline with PyTorch and 
                         Hugging Face Diffusers, featuring non-blocking image generation for multi-user support.
                     </p>
+                    <a href="https://github.com/MorningZephyr/AniMei" class="modal-link" target="_blank">View Project</a>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <!-- Project image placeholder - ready for redesign -->
-                    <h3>Stock Price Collector</h3>
-                    <a href="https://github.com/MorningZephyr/Stock-Price-Collector">Link to Project</a>
-                    <p style="text-align: center;"
-                    >   A responsive full stack web app built using Next.js App Router, Flask REST API, 
+            <div id="stock-collector-modal" class="project-modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('stock-collector')">&times;</button>
+                    <h2 class="modal-title">Stock Price Collector</h2>
+                    <p class="modal-description">
+                        A responsive full stack web app built using Next.js App Router, Flask REST API, 
                         and Tailwind CSS to fetch and download stock price data of a given stock. Range 
-                        and interval of price data are customizable, allowing flexibility and control
+                        and interval of price data are customizable, allowing flexibility and control.
                     </p>
+                    <a href="https://github.com/MorningZephyr/Stock-Price-Collector" class="modal-link" target="_blank">View Project</a>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <!-- Project image placeholder - ready for redesign -->
-                    <h3>Game Automation</h3>
-                    <a href="https://github.com/MorningZephyr/Farm-Bot">Link to Project</a>
-                    <p style="text-align: center;"
-                    >   A script for a web-based game for automating mob clearance with minimal manual intervention,
+            <div id="farm-bot-modal" class="project-modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal('farm-bot')">&times;</button>
+                    <h2 class="modal-title">Game Automation</h2>
+                    <p class="modal-description">
+                        A script for a web-based game for automating mob clearance with minimal manual intervention,
                         utilizing PyAutoGUI and its image recognition techniques.
-                        Designed multi-tab functionality to run two game accounts simultaneously, doubling game currency acquisition
+                        Designed multi-tab functionality to run two game accounts simultaneously, doubling game currency acquisition.
                     </p>
+                    <a href="https://github.com/MorningZephyr/Farm-Bot" class="modal-link" target="_blank">View Project</a>
                 </div>
-
             </div>
         </section>
 
