@@ -131,7 +131,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-secondary, .btn-resume {
     padding: 1rem 2rem;
     border-radius: var(--radius-md);
     text-decoration: none;
@@ -182,6 +182,36 @@ h1 {
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 156, 243, 0.3);
+}
+
+.btn-resume {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--accent-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-resume:hover::before {
+    left: 0;
+}
+
+.btn-resume:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
 }
 
 h2 {
@@ -607,7 +637,7 @@ li {
         justify-content: center;
     }
     
-    .btn-primary, .btn-secondary {
+    .btn-primary, .btn-secondary, .btn-resume {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
     }
