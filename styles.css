@@ -33,6 +33,7 @@ html {
 }
 
 body {
+    cursor: url("Images/Fruits/dork1_cursor.png") 16 16, auto;
     background: var(--bg-primary);
     isolation: isolate;
     margin: 0;
@@ -563,6 +564,12 @@ section {
 }
 
 /* Links */
+a,
+button,
+.project-card {
+    cursor: url("Images/Fruits/dork1_cursor.png") 16 16, pointer;
+}
+
 a {
     color: var(--primary-color);
     text-decoration: none;
