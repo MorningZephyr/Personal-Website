@@ -20,6 +20,18 @@
 }
 
 /* Base Styles */
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url("Images/Fruits/dork1_cursor.png") center / contain no-repeat;
+    pointer-events: none;
+    z-index: 1001;
+    opacity: 0.85;
+}
+
 *,
 *::before,
 *::after {

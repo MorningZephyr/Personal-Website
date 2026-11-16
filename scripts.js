@@ -113,6 +113,7 @@ function animateStars(timestamp) {
   }
 
   previousTimestamp = timestamp;
+  updateCursorTrail(deltaSeconds);
 
   starContext.clearRect(
     0,
@@ -208,3 +209,51 @@ function animateStars(timestamp) {
 }
 
 requestAnimationFrame(animateStars);
+
+// Five translucent copies follow one another using the star animation loop.
+const reducedCursorMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const cursorCopies = [];
+const cursorPosition = { x: 0, y: 0, visible: false };
+
+document.addEventListener("pointermove", (event) => {
+  if (event.pointerType !== "mouse" || reducedCursorMotion.matches) return;
+  cursorPosition.x = event.clientX;
+  cursorPosition.y = event.clientY;
+  cursorPosition.visible = true;
+
+  while (cursorCopies.length < 5) {
+    const element = document.createElement("div");
+    element.className = "cursor-trail";
+    element.hidden = true;
+    element.setAttribute("aria-hidden", "true");
+    document.body.append(element);
+    cursorCopies.push({ element, x: event.clientX, y: event.clientY });
+  }
+});
+
+document.documentElement.addEventListener("mouseleave", () => {
+  cursorPosition.visible = false;
+});
+window.addEventListener("blur", () => {
+  cursorPosition.visible = false;
+});
+
+function updateCursorTrail(deltaSeconds) {
+  let targetX = cursorPosition.x;
+  let targetY = cursorPosition.y;
+  const follow = 1 - Math.exp(-12 * deltaSeconds);
+
+  for (const copy of cursorCopies) {
+    const visible = cursorPosition.visible && !reducedCursorMotion.matches;
+    if (copy.element.hidden) {
+      copy.x = targetX;
+      copy.y = targetY;
+    }
+    copy.element.hidden = !visible;
+    copy.x += (targetX - copy.x) * follow;
+    copy.y += (targetY - copy.y) * follow;
+    copy.element.style.transform = `translate3d(${copy.x - 16}px, ${copy.y - 16}px, 0)`;
+    targetX = copy.x;
+    targetY = copy.y;
+  }
+}
