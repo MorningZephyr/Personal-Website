@@ -245,7 +245,7 @@ p {
 /* Hero Section */
 #hero {
     height: 100vh;
-    background: var(--bg-primary);
+    background: transparent;
     display: flex;
     flex-direction: column;
     position: relative;

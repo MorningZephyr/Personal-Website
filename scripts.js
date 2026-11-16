@@ -83,7 +83,7 @@ for (let index = 0; index < starCount; index++) {
   const star = {
     x: Math.random(),
     y: Math.random(),
-    size: Math.floor(Math.random() * 2) + 1,
+    size: Math.floor(Math.random() * 3) + 1,
     phase: Math.random() * Math.PI * 2,
     gleamSpeed: 0.5 + Math.random()
   };
@@ -129,17 +129,25 @@ function animateStars(timestamp) {
     );
 
     const brightness = 0.3 + ((wave + 1) / 2) * 0.7;
+    // Concentrate the glow around the brightest part of each star's cycle.
+    const gleam = Math.pow((wave + 1) / 2, 8);
 
     starContext.globalAlpha = brightness;
-    starContext.fillRect(
-      Math.floor(star.x * starCanvas.width),
-      Math.floor(star.y * starCanvas.height),
-      star.size,
-      star.size
+    starContext.shadowColor = "white";
+    starContext.shadowBlur = gleam * 8;
+    starContext.beginPath();
+    starContext.arc(
+      star.x * starCanvas.width,
+      star.y * starCanvas.height,
+      (star.size / 2) * (1 + gleam * 0.5),
+      0,
+      Math.PI * 2
     );
+    starContext.fill();
   }
 
   starContext.globalAlpha = 1;
+  starContext.shadowBlur = 0;
 
   meteorDelay -= deltaSeconds;
 
