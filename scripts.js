@@ -66,24 +66,33 @@ document.addEventListener('keydown', function(event) {
 // Star Logic
 const starCanvas = document.getElementById("star-background");
 const starContext = starCanvas.getContext("2d");
+const starImage = new Image();
+starImage.src = "Images/star1.png";
+let starWidth = window.innerWidth;
+let starHeight = window.innerHeight;
 
 function resizeStarCanvas() {
-  starCanvas.width = window.innerWidth;
-  starCanvas.height = window.innerHeight;
+  starWidth = window.innerWidth;
+  starHeight = window.innerHeight;
+  const pixelRatio = window.devicePixelRatio || 1;
+  starCanvas.width = Math.round(starWidth * pixelRatio);
+  starCanvas.height = Math.round(starHeight * pixelRatio);
+  starContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  starContext.imageSmoothingEnabled = false;
 }
 
 resizeStarCanvas();
 window.addEventListener("resize", resizeStarCanvas);
 
 const stars = [];
-const starCount = 150;
+const starCount = 100;
 
 // Create the stars.
 for (let index = 0; index < starCount; index++) {
   const star = {
     x: Math.random(),
     y: Math.random(),
-    size: Math.floor(Math.random() * 3) + 1,
+    size: 8,
     phase: Math.random() * Math.PI * 2,
     gleamSpeed: 0.5 + Math.random()
   };
@@ -118,33 +127,27 @@ function animateStars(timestamp) {
   starContext.clearRect(
     0,
     0,
-    starCanvas.width,
-    starCanvas.height
+    starWidth,
+    starHeight
   );
 
   starContext.fillStyle = "white";
 
   for (const star of stars) {
+    if (!starImage.complete || starImage.naturalWidth === 0) break;
     const wave = Math.sin(
       seconds * star.gleamSpeed + star.phase
     );
 
-    const brightness = 0.3 + ((wave + 1) / 2) * 0.7;
-    // Concentrate the glow around the brightest part of each star's cycle.
-    const gleam = Math.pow((wave + 1) / 2, 8);
-
+    const brightness = 0.1 + ((wave + 1) / 2) * 0.9;
     starContext.globalAlpha = brightness;
-    starContext.shadowColor = "white";
-    starContext.shadowBlur = gleam * 8;
-    starContext.beginPath();
-    starContext.arc(
-      star.x * starCanvas.width,
-      star.y * starCanvas.height,
-      (star.size / 2) * (1 + gleam * 0.5),
-      0,
-      Math.PI * 2
+    starContext.drawImage(
+      starImage,
+      Math.floor(star.x * starWidth),
+      Math.floor(star.y * starHeight),
+      star.size,
+      star.size
     );
-    starContext.fill();
   }
 
   starContext.globalAlpha = 1;
@@ -193,15 +196,15 @@ function animateStars(timestamp) {
     starContext.fillStyle = "white";
     starContext.fillRect(meteor.x - 2, meteor.y - 2, 4, 4);
     const tailHasLeftScreen =
-      tailX > starCanvas.width || tailY > starCanvas.height;
+      tailX > starWidth || tailY > starHeight;
 
     if (tailHasLeftScreen) {
       // Reset above the screen and wait before the next meteor.
-      meteor.x = Math.random() * starCanvas.width * 0.7;
+      meteor.x = Math.random() * starWidth * 0.7;
       meteor.y = -20;
       meteor.velocityX = 300 + Math.random() * 200;
       meteor.velocityY = 200 + Math.random() * 150;
-      meteorDelay = 3 + Math.random() * 5;
+      meteorDelay = 1 + Math.random() * 3;
     }
   }
 
