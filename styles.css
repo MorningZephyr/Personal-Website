@@ -20,6 +20,12 @@
 }
 
 /* Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     padding: 0;
     margin: 0;
@@ -47,6 +53,7 @@ body {
 }
 /* Hero Content */
 .hero-content {
+    box-sizing: border-box;
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -244,7 +251,12 @@ p {
 
 /* Hero Section */
 #hero {
-    height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 0;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -578,6 +590,12 @@ li {
         gap: 2rem;
         padding: 2rem 1rem;
     }
+
+    .hero-text {
+        flex: 0 1 auto;
+        width: 100%;
+        min-width: 0;
+    }
     
     h1 {
         font-size: 2.5rem;
@@ -598,8 +616,10 @@ li {
     }
     
     .profile-photo {
-        width: 250px;
-        height: 250px;
+        box-sizing: border-box;
+        width: min(250px, 70vw);
+        height: auto;
+        aspect-ratio: 1;
     }
     
     .hero-buttons {
@@ -622,7 +642,7 @@ li {
     
     
     #project-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         max-width: 400px;
     }
     
