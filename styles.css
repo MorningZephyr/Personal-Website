@@ -26,7 +26,7 @@
     left: 0;
     width: 32px;
     height: 32px;
-    background: url("Images/Fruits/dork1_cursor.png") center / contain no-repeat;
+    background: url("Images/cursor_cat.png") center / contain no-repeat;
     pointer-events: none;
     z-index: 1001;
     opacity: 0.85;
@@ -45,7 +45,7 @@ html {
 }
 
 body {
-    cursor: url("Images/Fruits/dork1_cursor.png") 16 16, auto;
+    cursor: url("Images/cursor_cat.png") 16 16, auto;
     background: var(--bg-primary);
     isolation: isolate;
     margin: 0;
@@ -579,7 +579,7 @@ section {
 a,
 button,
 .project-card {
-    cursor: url("Images/Fruits/dork1_cursor.png") 16 16, pointer;
+    cursor: url("Images/cursor_cat.png") 16 16, pointer;
 }
 
 a {
